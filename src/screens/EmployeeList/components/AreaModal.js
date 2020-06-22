@@ -45,9 +45,9 @@ const AreaModal = ({ currentState, closeModal, jobArea }) => {
 };
 
 AreaModal.propTypes = {
-  currentState: PropTypes.element.isRequired,
-  closeModal: PropTypes.element.isRequired,
-  jobArea: PropTypes.element.isRequired,
+  currentState: PropTypes.object.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  jobArea: PropTypes.string.isRequired,
 };
 
 export default AreaModal;
