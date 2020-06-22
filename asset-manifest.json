@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tick42_demo/static/css/main.54e6d163.chunk.css",
+    "main.js": "/tick42_demo/static/js/main.37906449.chunk.js",
+    "main.js.map": "/tick42_demo/static/js/main.37906449.chunk.js.map",
+    "runtime-main.js": "/tick42_demo/static/js/runtime-main.a433237f.js",
+    "runtime-main.js.map": "/tick42_demo/static/js/runtime-main.a433237f.js.map",
+    "static/js/2.9a06bdf5.chunk.js": "/tick42_demo/static/js/2.9a06bdf5.chunk.js",
+    "static/js/2.9a06bdf5.chunk.js.map": "/tick42_demo/static/js/2.9a06bdf5.chunk.js.map",
+    "index.html": "/tick42_demo/index.html",
+    "precache-manifest.e987aa99b5ec7619e8f2bbd3a41f7f08.js": "/tick42_demo/precache-manifest.e987aa99b5ec7619e8f2bbd3a41f7f08.js",
+    "service-worker.js": "/tick42_demo/service-worker.js",
+    "static/css/main.54e6d163.chunk.css.map": "/tick42_demo/static/css/main.54e6d163.chunk.css.map",
+    "static/js/2.9a06bdf5.chunk.js.LICENSE.txt": "/tick42_demo/static/js/2.9a06bdf5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a433237f.js",
+    "static/js/2.9a06bdf5.chunk.js",
+    "static/css/main.54e6d163.chunk.css",
+    "static/js/main.37906449.chunk.js"
+  ]
+}
