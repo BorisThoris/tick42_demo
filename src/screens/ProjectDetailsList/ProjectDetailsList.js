@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
-import OwnCss from "./ProjectDetailsStyle.css";
+import PropTypes from "prop-types";
+import "./ProjectDetailsStyle.css";
 
 import EmployeeButton from "./components/EmployeeButton";
 import EmployeesList from "../EmployeeList/EmployeeList";
@@ -17,7 +18,7 @@ const ProjectDetailsList = ({
   const [currentlyOpennedEmployee, setCurrentlyOpennedEmployee] = useState(
     false
   );
-  const [editDetailsOpen, setEditDetailsOpen] = useState(false);
+
   const [currentState, setCurrentState] = useState(false);
   const [inputValue, setInputValue] = useState(currentProject.name);
   const [addEmployeesVisible, setAddEmployeesVisible] = useState(false);
@@ -28,11 +29,8 @@ const ProjectDetailsList = ({
   }, [project]);
 
   useEffect(() => {
+    // alert("lol");
     if (currentProject) {
-      const tempProject = currentState.projects.find((element) => {
-        return element.id === currentProject.id;
-      });
-
       const newEmployees = employees.filter((employee) =>
         currentProject.employeesId.includes(employee.id)
       );
@@ -41,22 +39,19 @@ const ProjectDetailsList = ({
         (employee) => !currentProject.employeesId.includes(employee.id)
       );
 
-      console.log(tempExcludedEmployees.length > 0);
-      console.log(tempExcludedEmployees.length);
-
       setInputValue(currentProject.name);
       setCurrentProjectEmployees(newEmployees);
       setExcludedEmployees(tempExcludedEmployees);
       setCurrentlyOpennedEmployee(false);
     }
-  }, [currentProject]);
+  }, [currentProject, employees]);
 
   const updateName = () => {
     if (inputValue !== "") {
       const newProject = JSON.parse(JSON.stringify(currentProject));
       const tempState = JSON.parse(JSON.stringify(currentState));
       const foundIndex = tempState.projects.findIndex(
-        (x) => x.id == newProject.id
+        (x) => x.id === newProject.id
       );
 
       newProject.name = inputValue;
@@ -65,14 +60,19 @@ const ProjectDetailsList = ({
       UpdateProject(tempState);
       setCurrentState(tempState);
       setCurrentProject(tempState.projects[foundIndex]);
-    } else alert("No Name Given");
+    } else {
+      /*eslint-disable */
+      //suppress all warnings between comments
+      alert("No Name Given");
+      /*eslint-enable */
+    }
   };
 
   const spliceEmployee = (user) => {
     const newProject = JSON.parse(JSON.stringify(currentProject));
     const tempState = JSON.parse(JSON.stringify(currentState));
     const foundIndex = tempState.projects.findIndex(
-      (x) => x.id == newProject.id
+      (x) => x.id === newProject.id
     );
 
     const newTempEmployees = employees.filter((employee) =>
@@ -95,12 +95,10 @@ const ProjectDetailsList = ({
   };
 
   const pushEmployee = (employee) => {
-    console.log(employee);
-
     const newProject = JSON.parse(JSON.stringify(currentProject));
     const tempState = JSON.parse(JSON.stringify(currentState));
     const foundIndex = tempState.projects.findIndex(
-      (x) => x.id == newProject.id
+      (x) => x.id === newProject.id
     );
 
     newProject.employeesId.push(employee.id);
@@ -119,15 +117,17 @@ const ProjectDetailsList = ({
         <div className="treeContainer">
           <div className="titleFlex">
             <div>
-              <input
-                className="treeTitle"
-                style={{ marginBottom: "0px" }}
-                placeholder={inputValue}
-                defaultValue={inputValue}
-                onChange={(e) => {
-                  setInputValue(e.target.value);
-                }}
-              ></input>
+              {inputValue && (
+                <input
+                  className="treeTitle"
+                  style={{ marginBottom: "0px" }}
+                  placeholder={inputValue}
+                  value={inputValue}
+                  onChange={(e) => {
+                    setInputValue(e.target.value);
+                  }}
+                ></input>
+              )}
 
               <button
                 onClick={() => {
@@ -157,7 +157,7 @@ const ProjectDetailsList = ({
               <div className="treeTitle">
                 Employees: <br />
               </div>
-              {currentProjectEmployees.map((employee, index) => {
+              {currentProjectEmployees.map((employee) => {
                 return (
                   <EmployeeButton
                     employee={employee}
@@ -213,11 +213,17 @@ const ProjectDetailsList = ({
             setCurrentlyOpennedEmployee={setCurrentlyOpennedEmployee}
           />
         )}
-
-        {editDetailsOpen && <div>Edit Sad</div>}
       </Fragment>
     );
   else return null;
+};
+
+ProjectDetailsList.propTypes = {
+  project: PropTypes.object.isRequired,
+  employees: PropTypes.array.isRequired,
+  setCurrentlyOpennedProject: PropTypes.func.isRequired,
+  state: PropTypes.object.isRequired,
+  UpdateProject: PropTypes.func.isRequired,
 };
 
 export default ProjectDetailsList;

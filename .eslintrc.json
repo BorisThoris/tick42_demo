@@ -1,0 +1,19 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": "error"
+  },
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}
+
+// "extends": [
+//     "eslint:recommended",
+//     "plugin:react/recommended"
+// ]

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 const EmployeeButton = ({ employee, onClick, spliceEmployee }) => {
-  const [currentProjectEmployees, setCurrentProjectEmployees] = useState(false);
-
   return (
     <div className="childTitle" style={{ display: "flex" }}>
       <button
@@ -19,6 +18,12 @@ const EmployeeButton = ({ employee, onClick, spliceEmployee }) => {
       </button>
     </div>
   );
+};
+
+EmployeeButton.propTypes = {
+  employee: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired,
+  spliceEmployee: PropTypes.func.isRequired,
 };
 
 export default EmployeeButton;

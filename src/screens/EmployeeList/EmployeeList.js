@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import AreaModal from "./components/AreaModal";
 
@@ -16,7 +17,7 @@ const EmployeeList = ({
     );
 
     setProjectsPartOf(tempProjects);
-  }, []);
+  }, [currentState, employee]);
 
   return (
     <div className="treeWrapper">
@@ -55,7 +56,7 @@ const EmployeeList = ({
         <div className="treeTitle">
           Part of projects:
           {projectsPartOf &&
-            projectsPartOf.map((project, index) => {
+            projectsPartOf.map((project) => {
               return (
                 <div key={project.name} className={"addressDepartmentTitle"}>
                   {project.name}
@@ -76,6 +77,12 @@ const EmployeeList = ({
       )}
     </div>
   );
+};
+
+EmployeeList.propTypes = {
+  currentState: PropTypes.object.isRequired,
+  employee: PropTypes.object.isRequired,
+  setCurrentlyOpennedEmployee: PropTypes.func.isRequired,
 };
 
 export default EmployeeList;

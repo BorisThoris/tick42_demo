@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-import CompanyListCss from "../../sharedScreenStyles/index.css";
+import "../../sharedScreenStyles/index.css";
 
 import CompanyButton from "./components/CompanyButton";
 import DetailsList from "../CompanyDetailsList/CompanyDetailsList";
@@ -20,11 +21,16 @@ const CompaniesList = ({ GetInitialData, UpdateProject, state }) => {
       GetInitialData();
     }
 
-    setComapnies(state.home.data.companies);
-    setProjects(state.home.data.projects);
-    setEmployees(state.home.data.employees);
-    setCompanyAddresses(state.home.data["company-addresses"]);
-  }, [state.home.data]);
+    const tempCompanies = state.home.data.companies;
+    const tempProjects = state.home.data.projects;
+    const tempEmployees = state.home.data.employees;
+    const tempCompanyAddresses = state.home.data["company-addresses"];
+
+    setComapnies(tempCompanies);
+    setProjects(tempProjects);
+    setEmployees(tempEmployees);
+    setCompanyAddresses(tempCompanyAddresses);
+  }, [state.home.data, GetInitialData]);
 
   useEffect(() => {
     if (projects) {
@@ -35,19 +41,17 @@ const CompaniesList = ({ GetInitialData, UpdateProject, state }) => {
         (employee) => employee.companyId === currentlyOpennedCompany.id
       );
 
-      console.log(currentEmployees);
-
       setCurrentCompanyEmployees(currentEmployees);
       setCurrentCompanyProjects(currentProjects);
     }
-  }, [currentlyOpennedCompany, projects]);
+  }, [currentlyOpennedCompany, projects, employees]);
 
   return (
     <div className="treeWrapper">
       <div className="treeContainer">
         <div className="treeTitle">Companies</div>
         {companies
-          ? companies.map((company, index) => {
+          ? companies.map((company) => {
               return (
                 <CompanyButton
                   key={company.id}
@@ -74,6 +78,12 @@ const CompaniesList = ({ GetInitialData, UpdateProject, state }) => {
       )}
     </div>
   );
+};
+
+CompaniesList.propTypes = {
+  state: PropTypes.object.isRequired,
+  GetInitialData: PropTypes.func.isRequired,
+  UpdateProject: PropTypes.func.isRequired,
 };
 
 export default CompaniesList;

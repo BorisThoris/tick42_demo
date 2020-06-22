@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import ProjectButton from "./components/ProjectButton";
 import ProjectDetaisList from "../ProjectDetailsList/ProjectDetailsList";
@@ -43,7 +44,7 @@ const CompanyDetailsList = ({
         {projects && projects.length > 1 ? (
           <Fragment>
             <div className="treeTitle">Projects</div>
-            {projects.map((project, index) => {
+            {projects.map((project) => {
               return (
                 <ProjectButton
                   key={project.id}
@@ -69,6 +70,16 @@ const CompanyDetailsList = ({
       )}
     </Fragment>
   );
+};
+
+CompanyDetailsList.propTypes = {
+  UpdateProject: PropTypes.func.isRequired,
+  state: PropTypes.object.isRequired,
+  address: PropTypes.object.isRequired,
+  company: PropTypes.object.isRequired,
+  projects: PropTypes.array.isRequired,
+  employees: PropTypes.array.isRequired,
+  setCurrentlyOpennedCompany: PropTypes.func.isRequired,
 };
 
 export default CompanyDetailsList;

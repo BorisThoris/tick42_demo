@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import ComponentButtonCss from "./ComponentButton.css";
+import React from "react";
+import PropTypes from "prop-types";
 
-const ComponentButton = ({ GetInitialData, employee, setCurrentlyOpenned }) => {
-  const [companies, setCompanies] = useState(false);
+import "./ComponentButton.css";
 
+const ComponentButton = ({ employee, setCurrentlyOpenned }) => {
   return (
     <div
       className={"container"}
@@ -14,6 +14,11 @@ const ComponentButton = ({ GetInitialData, employee, setCurrentlyOpenned }) => {
       <h1>{employee.firstName}</h1>
     </div>
   );
+};
+
+ComponentButton.propTypes = {
+  employee: PropTypes.element.isRequired,
+  setCurrentlyOpenned: PropTypes.element.isRequired,
 };
 
 export default ComponentButton;

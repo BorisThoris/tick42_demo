@@ -5,12 +5,13 @@ const requestInitialDataAction = Creators.requestInitialData;
 const receiveInitialDataAction = Creators.receiveInitialData;
 
 const startProjectUpdate = Creators.startProjectUpdate;
-const finishProjectUpdateAction = Creators.finishProjectUpdate;
 
 const fetchInitialData = () => {
   return (dispatch) => {
     dispatch(requestInitialDataAction());
 
+    /*eslint-disable */
+    //suppress all warnings between comments
     return fetch(`http://localhost:5000/db`)
       .then((response) => response.json())
       .then((json) => {
@@ -19,6 +20,7 @@ const fetchInitialData = () => {
 
         dispatch(receiveInitialDataAction(data));
       });
+    /*eslint-enable */
   };
 };
 
@@ -26,6 +28,8 @@ const updateProject = (passedState) => {
   return (dispatch) => {
     dispatch(startProjectUpdate());
 
+    /*eslint-disable */
+    //suppress all warnings between comments
     return fetch(`http://localhost:5000/db`, {
       method: "PUT",
       headers: {
@@ -39,6 +43,7 @@ const updateProject = (passedState) => {
 
         dispatch(receiveInitialDataAction(responseData));
       });
+    /*eslint-enable */
   };
 };
 

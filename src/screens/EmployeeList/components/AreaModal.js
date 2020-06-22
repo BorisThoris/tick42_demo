@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ownCss from "./AreaModal.css";
+import PropTypes from "prop-types";
+
+import "./AreaModal.css";
 
 const AreaModal = ({ currentState, closeModal, jobArea }) => {
   const [jobAreaEmployee, setJobAreaEmployees] = useState(false);
@@ -22,7 +24,7 @@ const AreaModal = ({ currentState, closeModal, jobArea }) => {
     }
 
     setProjectsNumb(numb);
-  }, []);
+  }, [currentState, jobArea]);
 
   return (
     <div
@@ -40,6 +42,12 @@ const AreaModal = ({ currentState, closeModal, jobArea }) => {
       </div>
     </div>
   );
+};
+
+AreaModal.propTypes = {
+  currentState: PropTypes.element.isRequired,
+  closeModal: PropTypes.element.isRequired,
+  jobArea: PropTypes.element.isRequired,
 };
 
 export default AreaModal;

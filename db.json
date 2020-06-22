@@ -805,7 +805,7 @@
       },
       {
         "id": "c6d11bec-ae50-4837-8adf-be301bee9039",
-        "name": "Unbranded Granite Soap",
+        "name": "Unbranded Granite Sodap",
         "department": "Books",
         "employeesId": [
           "2a32c2a6-2bd5-4f94-aa44-f4d3179bd320",
@@ -860,12 +860,10 @@
       },
       {
         "id": "fadfd649-c272-4dfc-9e1a-f697131c256b",
-        "name": "TestTe",
+        "name": "Generic Cotton Keyboard",
         "department": "Shoes",
         "employeesId": [
-          "80d3d813-5918-443f-aff7-df4d98ddd86a",
-          "764fa253-05b2-4dee-bc11-cae08df6dcb6",
-          "2a06ccac-a659-4f27-9907-bd26674e1ad5"
+          "80d3d813-5918-443f-aff7-df4d98ddd86a"
         ],
         "companyId": "a2c39255-202a-4239-8a9f-5de62629ece0"
       },
@@ -911,22 +909,22 @@
       },
       {
         "id": "8faa447c-3cf5-49c7-92a9-14c2c0a453eb",
-        "name": "Handcrafted Frozen Shoes",
+        "name": "Handcrafted Frozen Shoeees",
         "department": "Kids",
         "employeesId": [
-          "fd1221e7-03b5-48e3-a698-f5245b9b70f2",
           "73591378-6602-4338-a110-b9ad8b032e27",
-          "c7fff585-2f9b-4164-94f0-6552dbeeeb04"
+          "c7fff585-2f9b-4164-94f0-6552dbeeeb04",
+          "26e44cf2-cf3c-4ac9-b331-c87c9dfd07cf",
+          "fd1221e7-03b5-48e3-a698-f5245b9b70f2"
         ],
         "companyId": "431e9951-7c0f-4bec-b173-072561f83a91"
       },
       {
         "id": "3b2cdbf6-3b30-49f7-9aa9-74adaa2ee42b",
-        "name": "Sleek TestComputer",
+        "name": "Sleek Rubber Computer",
         "department": "Computers",
         "employeesId": [
-          "929c292d-c36f-4902-93c6-7dc570ae6a6a",
-          "632e37cc-c8a2-4b0a-b04b-b72bb7d7beb6"
+          "929c292d-c36f-4902-93c6-7dc570ae6a6a"
         ],
         "companyId": "b36b76d0-7743-4fe5-bf94-154779d8eb29"
       },
@@ -971,7 +969,7 @@
       },
       {
         "id": "3a6a7fff-cd05-4d02-ac28-49ac5ac7e56d",
-        "name": "Rustic Wooden Keyboard",
+        "name": "Rustic Wooden Keyboarddd",
         "department": "Tools",
         "employeesId": [
           "26e44cf2-cf3c-4ac9-b331-c87c9dfd07cf",

@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from "react";
-import CompanyButtonCss from "./CompanyButton.css";
+import React from "react";
+import PropTypes from "prop-types";
+import "./CompanyButton.css";
 
-const CompanyButton = ({
-  GetInitialData,
-  company,
-  setCurrentlyOpenned,
-  address,
-}) => {
+const CompanyButton = ({ company, setCurrentlyOpenned }) => {
+  const tempComp = company;
+
   return (
     <div
-      key={company.id}
+      key={tempComp.id}
       className={"container"}
       onClick={() => {
-        setCurrentlyOpenned(company);
+        setCurrentlyOpenned(tempComp);
       }}
     >
-      <h1>{company.name}</h1>
+      <h1>{tempComp.name}</h1>
     </div>
   );
+};
+
+CompanyButton.propTypes = {
+  company: PropTypes.object.isRequired,
+  setCurrentlyOpenned: PropTypes.func.isRequired,
 };
 
 export default CompanyButton;

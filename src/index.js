@@ -10,7 +10,7 @@ import rootReducer from "./reducers";
 
 import * as serviceWorker from "./serviceWorker";
 
-import indexCss from "./index.css";
+import "./index.css";
 
 const composeEnhancers = composeWithDevTools({});
 const store = createStore(
@@ -24,7 +24,10 @@ ReactDOM.render(
       <App />
     </Provider>
   </div>,
+  /*eslint-disable */
+  //suppress all warnings between comments
   document.getElementById("root")
+  /*eslint-enable */
 );
 
 serviceWorker.unregister();
