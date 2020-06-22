@@ -7,8 +7,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={CompaniesListContainer} />
-          <Route path="/home" component={CompaniesListContainer} />
+          <Route exact path="**" component={CompaniesListContainer} />
         </div>
       </Router>
     );
