@@ -909,7 +909,7 @@
       },
       {
         "id": "8faa447c-3cf5-49c7-92a9-14c2c0a453eb",
-        "name": "Handcrafted Frozen Shoeees",
+        "name": "Handcrafted Frozen Sheoeees",
         "department": "Kids",
         "employeesId": [
           "73591378-6602-4338-a110-b9ad8b032e27",
@@ -968,12 +968,14 @@
       },
       {
         "id": "3a6a7fff-cd05-4d02-ac28-49ac5ac7e56d",
-        "name": "Rustic Wooden Keyboarddd",
+        "name": "Rustic Wooden Keyboeagrddd",
         "department": "Tools",
         "employeesId": [
           "26e44cf2-cf3c-4ac9-b331-c87c9dfd07cf",
           "bccb90ee-485f-448a-9dd8-2f73572c42af",
-          "c7fff585-2f9b-4164-94f0-6552dbeeeb04"
+          "c7fff585-2f9b-4164-94f0-6552dbeeeb04",
+          "73591378-6602-4338-a110-b9ad8b032e27",
+          "fd1221e7-03b5-48e3-a698-f5245b9b70f2"
         ],
         "companyId": "431e9951-7c0f-4bec-b173-072561f83a91"
       },
