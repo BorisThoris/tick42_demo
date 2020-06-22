@@ -1,0 +1,23 @@
+.container {
+  width: 200px;
+  background-color: #80808000;
+
+  color: black;
+  font-size: 60%;
+  text-align: center;
+
+  border-style: solid;
+  border-radius: 5%;
+  border-color: #8080808a;
+
+  margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  transition: 0.3s;
+}
+
+.container:hover {
+  /* transform: scale(1.1); */
+  cursor: pointer;
+}
